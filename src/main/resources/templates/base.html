@@ -1,0 +1,28 @@
+<head th:fragment="header">
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        .logo-container {
+            background-color: #47bcff;
+        }
+
+        .logo {
+            font-family: 'Handlee', cursive;
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+
+<div th:fragment="logo" class="logo-container p-2 mb-3 text-white">
+    <div class="container d-flex align-items-center justify-content-between">
+        <span class="logo">Mudi</span>
+        <span>Login</span>
+    </div>
+</div>
+
+<div th:fragment="titulo(valor)" class="jumbotron mb-0">
+    <h1 class="display-4" th:text="${valor}"></h1>
+</div>
