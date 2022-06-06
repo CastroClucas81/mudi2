@@ -1,72 +1,90 @@
 package br.com.alura.mvc.mudi.model;
 
+import br.com.alura.mvc.mudi.enums.StatusPedido;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Pedido {
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private String nomeProduto;
-	private BigDecimal valorNegociado;
-	private LocalDate dataDaEntrega;
-	private String urlProduto;
-	private String urlImagem;
-	private String descricao;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	public String getNomeProduto() {
-		return nomeProduto;
-	}
+    private String nomeProduto;
+    private BigDecimal valorNegociado;
+    private LocalDate dataDaEntrega;
+    private String urlProduto;
+    private String urlImagem;
+    private String descricao;
 
-	public void setNomeProduto(String nomeProduto) {
-		this.nomeProduto = nomeProduto;
-	}
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
 
-	public BigDecimal getValorNegociado() {
-		return valorNegociado;
-	}
+    public String getNomeProduto() {
+        return nomeProduto;
+    }
 
-	public void setValorNegociado(BigDecimal valorNegociado) {
-		this.valorNegociado = valorNegociado;
-	}
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
+    }
 
-	public LocalDate getDataDaEntrega() {
-		return dataDaEntrega;
-	}
+    public BigDecimal getValorNegociado() {
+        return valorNegociado;
+    }
 
-	public void setDataDaEntrega(LocalDate dataDaEntrega) {
-		this.dataDaEntrega = dataDaEntrega;
-	}
+    public void setValorNegociado(BigDecimal valorNegociado) {
+        this.valorNegociado = valorNegociado;
+    }
 
-	public String getUrlProduto() {
-		return urlProduto;
-	}
+    public LocalDate getDataDaEntrega() {
+        return dataDaEntrega;
+    }
 
-	public void setUrlProduto(String urlProduto) {
-		this.urlProduto = urlProduto;
-	}
+    public void setDataDaEntrega(LocalDate dataDaEntrega) {
+        this.dataDaEntrega = dataDaEntrega;
+    }
 
-	public String getUrlImagem() {
-		return urlImagem;
-	}
+    public String getUrlProduto() {
+        return urlProduto;
+    }
 
-	public void setUrlImagem(String urlImagem) {
-		this.urlImagem = urlImagem;
-	}
+    public void setUrlProduto(String urlProduto) {
+        this.urlProduto = urlProduto;
+    }
 
-	public String getDescricao() {
-		return descricao;
-	}
+    public String getUrlImagem() {
+        return urlImagem;
+    }
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+    public void setUrlImagem(String urlImagem) {
+        this.urlImagem = urlImagem;
+    }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
+    }
 }
